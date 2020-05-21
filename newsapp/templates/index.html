@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="en" dir="ltr"> 
+<head> 
+	<meta charset="utf-8"> 
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Latest News</title> 
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+<!-- Optional theme -->
+</head> 
+<body style="background-color: aliceblue"> 
+	<div class="container"> 
+
+	<div class="jumbotron" style="color:black"> 
+
+	<h1 style ="color:black"> 
+		Get the latest news on our website 
+
+	</div> 
+
+
+	{% for new, des, i in mylist %} 
+		<div class="card card-body">
+			<img width="100%" src="{{ i }}" alt=""> 
+			<h1>News:</h1> {{ new }} 
+			{{ value|linebreaks }} 
+
+			<h4>Description:</h4>{{ des }} 
+			{{ value|linebreaks }} 
+		</div>
+		<br>
+
+	{% endfor %} 
+	</div> 
+
+</body> 
+</html> 
