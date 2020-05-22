@@ -43,10 +43,11 @@ def index(request):
 	top_headlines = newsapi.get_top_headlines(sources ='bbc-news,the-verge,techcrunch') 
 	
 	all_articles = newsapi.get_everything(sources ='bbc-news,the-verge,techcrunch') 
-	
+	pprint(all_articles)
 	# /v2/sources
 	sources = newsapi.get_sources()
-	pprint(sources)
+	# pprint(sources)
+	# pprint(dir(newsapi))
 
 	l = top_headlines['articles'] 
 	desc =[] 
