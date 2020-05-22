@@ -20,7 +20,7 @@
 	</div> 
 
 
-	{% for new, des, i in mylist %} 
+	{% for new, des, i, url in mylist %} 
 		<div class="card card-body">
 			<img width="100%" src="{{ i }}" alt=""> 
 			<h1>News:</h1> {{ new }} 
@@ -28,6 +28,7 @@
 
 			<h4>Description:</h4>{{ des }} 
 			{{ value|linebreaks }} 
+			<a class="btn btn-outline-info" href="{{url}}">Read More</a>
 		</div>
 		<br>
 

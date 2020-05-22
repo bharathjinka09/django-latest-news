@@ -41,9 +41,9 @@ def index(request):
 	newsapi = NewsApiClient(api_key =settings.API_KEY) 
 	
 	top_headlines = newsapi.get_top_headlines(sources ='bbc-news,the-verge,techcrunch') 
-	
+	pprint(top_headlines)
 	all_articles = newsapi.get_everything(sources ='bbc-news,the-verge,techcrunch') 
-	pprint(all_articles)
+	# pprint(all_articles)
 	# /v2/sources
 	sources = newsapi.get_sources()
 	# pprint(sources)
@@ -53,12 +53,14 @@ def index(request):
 	desc =[] 
 	news =[] 
 	img =[] 
+	url = []
 
 	for i in range(len(l)): 
 		f = l[i] 
 		news.append(f['title']) 
 		desc.append(f['description']) 
 		img.append(f['urlToImage']) 
-	mylist = zip(news, desc, img) 
+		url.append(f['url']) 
+	mylist = zip(news, desc, img, url) 
 
 	return render(request, 'index.html', context ={"mylist":mylist}) 
